@@ -1,0 +1,142 @@
+body{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    height:100vh;
+    background-color: #b784db;
+}
+
+.envelope{
+    position:relative;
+     cursor:pointer; 
+}
+
+.back{
+    position:relative;
+    width:250px;
+    height:200px;
+    background:#6247aa;
+}
+
+.front{
+    position:absolute;
+    border-right:130px solid #815ac0;
+    border-top:100px solid transparent;
+    border-bottom:100px solid transparent;
+    height:0;
+    width:0;
+    top:0;
+    left:120px;
+    z-index:3;
+
+}
+
+.front:before{
+    content:"";
+    position:absolute;
+    border-left:130px solid #815ac0;
+    border-top:100px solid transparent;
+    border-bottom:100px solid transparent;
+    height:0;
+    width:0;
+    top:-100px;
+    left:-120px;
+
+}
+.front:after{
+    content:"";
+    position:absolute;
+    border-bottom:105px solid #7251b5;
+    border-left:125px solid transparent;
+    border-right:125px solid transparent;
+    height:0;
+    width:0;
+    top:-5px;
+    left:-120px;
+
+}
+.top{
+    position:absolute;
+    border-top:105px solid #9163cb;
+    border-left: 125px solid transparent;
+    border-right:125px solid transparent;
+    height:0;
+    width:0;
+    top:0;
+    transform-origin:top;
+    transition:0.4s;
+}
+.envelope:hover .top{
+    transform:rotateX(160deg);
+}
+
+.letter{
+    position:absolute;
+    background:rgb(250, 214, 214);
+    width:230px;
+    height:180px;
+    top:10px;
+    left:10px;
+    transition:0.2s;
+    align-items: center;
+}
+.envelope:hover .letter{
+
+    transform: translateY(-100px);
+    z-index:2;
+}
+.text1{
+    position:absolute;
+    color:rgb(9, 9, 9);
+    font-family:sans-serif;
+    top:-95%;
+    left:-30%;
+}
+.text{
+    text-align:center;
+    font-size:16px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top:20px;
+    font-weight:bold;
+    color:rgb(109, 19, 19);
+    position:relative;
+    top:-10px;
+    left:5px;
+    line-height: 15px;
+}
+
+
+.heart{
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:15px;
+    height:15px;
+    background:#f9b598;
+    z-index:4;
+    transform:translate(-50%, -20%) rotate(45deg);
+    transition:transform 0.5s ease-in-out 1s;
+    box-shadow:0 0 10px rgb(247, 36, 36);
+    cursor:pointer;
+}
+
+.heart::before,
+.heart::after{
+    content:'';
+    position:absolute;
+    width:15px;
+    height:15px;
+    background: #f9b598;
+    border-radius:50%;
+}
+
+.heart::before{
+    top:-7.5px;
+}
+.heart::after{
+    right:7.5px;
+}
+
+#a{
+    z-index:1;
+}
